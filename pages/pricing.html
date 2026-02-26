@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Pricing — LocalRise Digital</title>
+<link rel="stylesheet" href="../css/style.css"/>
+<style>
+.pricing-main{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:start;margin-top:48px;}
+.pricing-card{background:white;border-radius:32px;padding:48px 40px 40px;box-shadow:0 20px 60px rgba(0,69,52,.12);border:2px solid #004534;position:relative;overflow:hidden;}
+.pricing-card::after{content:'';position:absolute;top:-50%;right:-50%;bottom:-50%;left:-50%;background:linear-gradient(to bottom,rgba(255,255,255,0) 0%,rgba(255,255,255,.04) 50%,rgba(255,255,255,0) 100%);transform:rotateZ(60deg) translateY(-100%);animation:shine 6s ease-in-out infinite;pointer-events:none;}
+.price-badge{position:absolute;top:-18px;left:50%;transform:translateX(-50%);background:#D3FF62;color:#004534;border-radius:20px;padding:9px 24px;font-size:13px;font-weight:800;white-space:nowrap;box-shadow:0 4px 14px rgba(211,255,98,.5);}
+.price-title{text-align:center;font-size:22px;font-weight:700;color:#004534;margin-bottom:8px;}
+.price-amount{font-size:5rem;font-weight:800;color:#004534;line-height:1;display:block;text-align:center;}
+.price-note{font-size:15px;color:#807979;display:block;text-align:center;margin:10px 0 36px;}
+.pf-list{list-style:none;margin-bottom:36px;}
+.pf-item{display:flex;align-items:center;gap:14px;padding:14px 0;font-size:15px;color:#374151;border-bottom:1px solid #EDEDFE;}
+.pf-item:last-child{border-bottom:none;}
+.pf-item span:first-child{font-size:18px;flex-shrink:0;}
+.pf-check{margin-left:auto;color:#0C6951;font-weight:800;font-size:18px;}
+.pricing-btn{width:100%;background:#D3FF62;color:#004534;border:none;border-radius:16px;padding:18px;font-size:18px;font-weight:800;cursor:pointer;box-shadow:0 4px 14px rgba(211,255,98,.4);transition:transform .2s,box-shadow .2s;}
+.pricing-btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(211,255,98,.5);}
+.pricing-footnote{text-align:center;margin-top:14px;font-size:13px;color:#807979;font-style:italic;}
+/* Right side */
+.pricing-right{display:flex;flex-direction:column;gap:20px;}
+.p-card{background:white;border-radius:20px;padding:28px;border:1px solid #CACAFC;}
+.p-card-title{font-size:16px;font-weight:700;color:#004534;margin-bottom:16px;}
+.p-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid #EDEDFE;font-size:14px;}
+.p-row:last-child{border-bottom:none;}
+.p-service{color:#807979;}
+.p-price{font-weight:700;color:#dc2626;}
+.p-total-row{margin-top:16px;background:#FAFFEE;border-radius:12px;padding:14px 16px;display:flex;justify-content:space-between;align-items:center;border:1px solid #CACAFC;}
+.p-total-label{font-size:14px;font-weight:700;color:#004534;}
+.p-total-val{font-size:22px;font-weight:800;color:#004534;}
+.guarantee{background:linear-gradient(135deg,#FAFFEE,#ecfdf5);border:1px solid #CACAFC;border-radius:20px;padding:28px;text-align:center;}
+.guarantee-emoji{font-size:40px;margin-bottom:12px;}
+.guarantee-title{font-size:18px;font-weight:700;color:#004534;margin-bottom:10px;}
+.guarantee-text{font-size:14px;color:#0C6951;line-height:1.7;}
+.cta-pair{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.cta-call{background:white;border:2px solid #CACAFC;border-radius:14px;padding:14px;text-align:center;color:#004534;font-weight:700;font-size:14px;}
+.cta-wa{background:#25D366;color:white;border:none;border-radius:14px;padding:14px;text-align:center;font-weight:700;font-size:14px;}
+/* Compare table */
+.compare-table{width:100%;border-collapse:collapse;margin-top:40px;}
+.compare-table th{background:#004534;color:white;padding:16px 20px;text-align:left;font-size:14px;}
+.compare-table th:first-child{border-radius:12px 0 0 0;}
+.compare-table th:last-child{border-radius:0 12px 0 0;}
+.compare-table td{padding:14px 20px;border-bottom:1px solid #EDEDFE;font-size:14px;color:#374151;}
+.compare-table tr:last-child td{border-bottom:none;}
+.compare-table tr:hover td{background:#FAFFEE;}
+.compare-table td.yes{color:#0C6951;font-weight:700;}
+.compare-table td.no{color:#dc2626;}
+.compare-table td.highlight{font-weight:700;color:#004534;}
+@media(max-width:768px){.pricing-main{grid-template-columns:1fr!important;}.cta-pair{grid-template-columns:1fr 1fr;}}
+</style>
+</head>
+<body>
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 75" width="184" height="46"><defs><linearGradient id="pBg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#4A90E2"/><stop offset="100%" stop-color="#137FEC"/></linearGradient><radialGradient id="pGlow" cx="50%" cy="40%" r="60%"><stop offset="0%" stop-color="#137FEC" stop-opacity="0.3"/><stop offset="100%" stop-color="#137FEC" stop-opacity="0"/></radialGradient><filter id="pSh" x="-40%" y="-20%" width="180%" height="180%"><feDropShadow dx="0" dy="3" stdDeviation="3.5" flood-color="#137FEC" flood-opacity="0.4"/></filter><filter id="aGl" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="1.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs><ellipse cx="37" cy="32" rx="28" ry="28" fill="url(#pGlow)"/><path d="M37 6C25 6 15 16 15 28C15 42 37 66 37 66C37 66 59 42 59 28C59 16 49 6 37 6Z" fill="url(#pBg)" filter="url(#pSh)"/><circle cx="37" cy="27" r="12" fill="white" opacity="0.12"/><g filter="url(#aGl)"><polyline points="26,35 31,27 37,31 44,20" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><polyline points="40,18 44,20 42,25" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></g><text x="70" y="40" font-family="'Segoe UI','Arial Black',Arial,sans-serif" font-size="27" font-weight="800" fill="#111827" letter-spacing="-0.5">LocalRise</text><text x="214" y="40" font-family="'Segoe UI',Arial,sans-serif" font-size="27" font-weight="400" fill="#137FEC" letter-spacing="-0.5">Digital</text></svg></a>
+    <div class="nav-links"><a href="../index.html">Home</a><a href="services.html">Services</a><a href="about.html">About</a><a href="pricing.html" class="active">Pricing</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a><a href="contact.html" class="nav-cta">Get Started →</a></div>
+    <button class="mob-btn" id="mob-btn" onclick="toggleMob()">☰</button>
+  </div>
+  <div class="mob-menu" id="mob-menu"><a href="../index.html">Home</a><a href="services.html">Services</a><a href="about.html">About</a><a href="pricing.html">Pricing</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a><a href="contact.html" class="nav-cta">Get Started →</a></div>
+</nav>
+
+<div class="page-hero">
+  <div class="breadcrumb"><a href="../index.html">Home</a><span>›</span><span>Pricing</span></div>
+  <div class="tag">💰 Pricing</div>
+  <h1>Simple, <span class="grad-text">Transparent Pricing</span></h1>
+  <p>One investment. Three powerful services. No monthly fees — ever. Just real results for your local business.</p>
+</div>
+
+<section class="section" style="background:white;">
+  <div class="section-inner">
+    <div class="pricing-main">
+      <!-- Main Pricing Card -->
+      <div style="position:relative;" class="reveal">
+        <div class="price-badge">✨ Most Popular — Best Value</div>
+        <div class="pricing-card">
+          <div class="price-title">Complete Digital Package</div>
+          <span class="price-amount">₹5,000</span>
+          <span class="price-note">One-time investment • No monthly fees</span>
+          <ul class="pf-list">
+            <li class="pf-item"><span>📍</span><span>Google Maps Optimization</span><span class="pf-check">✓</span></li>
+            <li class="pf-item"><span>🌐</span><span>Professional Website Creation</span><span class="pf-check">✓</span></li>
+            <li class="pf-item"><span>🔗</span><span>Domain Purchase (We Buy It)</span><span class="pf-check">✓</span></li>
+            <li class="pf-item"><span>💬</span><span>WhatsApp Business Integration</span><span class="pf-check">✓</span></li>
+            <li class="pf-item"><span>📱</span><span>Mobile Responsive Design</span><span class="pf-check">✓</span></li>
+            <li class="pf-item"><span>🔍</span><span>SEO-Friendly Setup</span><span class="pf-check">✓</span></li>
+            <li class="pf-item"><span>📊</span><span>Google Analytics Setup</span><span class="pf-check">✓</span></li>
+            <li class="pf-item"><span>🛠️</span><span>1 Month Free Support</span><span class="pf-check">✓</span></li>
+            <li class="pf-item"><span>📚</span><span>Training &amp; Documentation</span><span class="pf-check">✓</span></li>
+            <li class="pf-item"><span>⚡</span><span>Fast Delivery (7–10 Days)</span><span class="pf-check">✓</span></li>
+          </ul>
+          <button class="pricing-btn" onclick="window.location='contact.html'">Get Started Now →</button>
+          <p class="pricing-footnote">No hidden fees. No monthly charges. No surprises. Ever.</p>
+        </div>
+      </div>
+      <!-- Right -->
+      <div class="pricing-right reveal">
+        <div class="guarantee">
+          <div class="guarantee-emoji">🛡️</div>
+          <div class="guarantee-title">Satisfaction Guarantee</div>
+          <p class="guarantee-text">Not happy with our work? We revise until you are. Your investment is protected by our commitment to quality and your growth.</p>
+        </div>
+        <div class="p-card">
+          <div class="p-card-title">💡 What others charge separately:</div>
+          <div class="p-row"><span class="p-service">Website Design (Agency)</span><span class="p-price">₹15,000–50,000</span></div>
+          <div class="p-row"><span class="p-service">Google Maps SEO (monthly)</span><span class="p-price">₹3,000–8,000/mo</span></div>
+          <div class="p-row"><span class="p-service">WhatsApp Business Setup</span><span class="p-price">₹5,000–10,000</span></div>
+          <div class="p-row"><span class="p-service">Domain + Hosting Setup</span><span class="p-price">₹2,000–5,000</span></div>
+          <div class="p-total-row"><span class="p-total-label">With LocalRise Digital</span><span class="p-total-val">₹5,000 total</span></div>
+        </div>
+        <div class="cta-pair">
+          <a href="tel:+918094285616" class="cta-call">📞 Call Us</a>
+          <a href="https://wa.me/918094285616" target="_blank" class="cta-wa">💬 WhatsApp</a>
+        </div>
+        <div class="p-card" style="text-align:center;">
+          <div style="font-size:28px;margin-bottom:12px;">⚡</div>
+          <div style="font-size:16px;font-weight:700;color:#004534;margin-bottom:8px;">Delivered in 7–10 Days</div>
+          <p style="font-size:14px;color:#0C6951;line-height:1.6;">We work fast without cutting corners. Most clients are live and ranking within 10 business days.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Comparison Table -->
+    <div style="margin-top:80px;" class="reveal">
+      <div class="text-center"><div class="tag">📊 Comparison</div><h2 class="section-title">LocalRise vs. <span class="grad-text">Other Options</span></h2></div>
+      <div style="overflow-x:auto;">
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th style="background:#0C6951;">LocalRise Digital ✨</th>
+              <th>Digital Agency</th>
+              <th>Freelancer</th>
+              <th>DIY</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Google Maps Optimization</td><td class="yes highlight">✓ Included</td><td>₹3–8k/month</td><td class="no">Rarely offered</td><td class="no">Very complex</td></tr>
+            <tr><td>Website Creation</td><td class="yes highlight">✓ Included</td><td>₹15–50k</td><td>₹8–20k</td><td>Time-consuming</td></tr>
+            <tr><td>Domain Purchase</td><td class="yes highlight">✓ We buy it for you</td><td class="no">Not included</td><td class="no">Not included</td><td>Manual setup</td></tr>
+            <tr><td>WhatsApp Integration</td><td class="yes highlight">✓ Included</td><td>₹5–10k extra</td><td class="no">Rarely offered</td><td class="no">Technical skills needed</td></tr>
+            <tr><td>Delivery Time</td><td class="yes highlight">7–10 days</td><td>4–8 weeks</td><td>2–4 weeks</td><td>Months</td></tr>
+            <tr><td>Monthly Fees</td><td class="yes highlight">₹0 — None!</td><td>₹5–15k/month</td><td>Varies</td><td>Hosting costs</td></tr>
+            <tr><td>Post-Launch Support</td><td class="yes highlight">1 Month Free</td><td>Paid plans</td><td>Rarely offered</td><td class="no">None</td></tr>
+            <tr><td><strong>Total Cost</strong></td><td class="yes highlight"><strong>₹5,000 one-time</strong></td><td><strong>₹50,000+</strong></td><td><strong>₹20,000+</strong></td><td><strong>Your time + stress</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div style="background:linear-gradient(135deg,#004534,#0C6951);padding:80px 24px;text-align:center;">
+  <h2 style="font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;color:#D3FF62;margin-bottom:16px;">Ready to Invest in Your Business Growth?</h2>
+  <p style="font-size:17px;color:rgba(255,255,255,.8);margin-bottom:32px;">₹5,000 one-time. 7–10 day delivery. Real results guaranteed.</p>
+  <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+    <a href="contact.html" class="btn-primary">Get Started Today →</a>
+    <a href="faq.html" class="btn-white">Have Questions? See FAQ</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div><a href="../index.html" style="display:inline-block;margin-bottom:16px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 75" width="160" height="40"><defs><linearGradient id="fpBg4" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#4A90E2"/><stop offset="100%" stop-color="#137FEC"/></linearGradient><radialGradient id="fpGl4" cx="50%" cy="40%" r="60%"><stop offset="0%" stop-color="#137FEC" stop-opacity="0.3"/><stop offset="100%" stop-color="#137FEC" stop-opacity="0"/></radialGradient><filter id="fpSh4" x="-40%" y="-20%" width="180%" height="180%"><feDropShadow dx="0" dy="3" stdDeviation="3.5" flood-color="#137FEC" flood-opacity="0.4"/></filter></defs><ellipse cx="37" cy="32" rx="28" ry="28" fill="url(#fpGl4)"/><path d="M37 6C25 6 15 16 15 28C15 42 37 66 37 66C37 66 59 42 59 28C59 16 49 6 37 6Z" fill="url(#fpBg4)" filter="url(#fpSh4)"/><circle cx="37" cy="27" r="12" fill="white" opacity="0.12"/><polyline points="26,35 31,27 37,31 44,20" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><polyline points="40,18 44,20 42,25" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><text x="70" y="40" font-family="'Segoe UI',Arial,sans-serif" font-size="27" font-weight="800" fill="white" letter-spacing="-0.5">LocalRise</text><text x="214" y="40" font-family="'Segoe UI',Arial,sans-serif" font-size="27" font-weight="400" fill="#137FEC" letter-spacing="-0.5">Digital</text></svg></a><p class="footer-desc">Empowering local businesses with digital solutions. Google Maps, Websites, WhatsApp — all for ₹5,000 one-time.</p></div>
+      <div><div class="footer-heading">Pages</div><a href="../index.html" class="footer-link">Home</a><a href="services.html" class="footer-link">Services</a><a href="about.html" class="footer-link">About</a><a href="pricing.html" class="footer-link">Pricing</a></div>
+      <div><div class="footer-heading">Company</div><a href="about.html" class="footer-link">About Us</a><a href="faq.html" class="footer-link">FAQ</a><a href="contact.html" class="footer-link">Contact</a></div>
+      <div><div class="footer-heading">Contact</div><a href="mailto:ydvrahul1906@gmail.com" class="footer-link">📧 ydvrahul1906@gmail.com</a><a href="tel:+918094285616" class="footer-link">📞 +91 80942 85616</a><span class="footer-link">📍 Akbarpur Nagar, Ahmedabad</span><a href="https://wa.me/918094285616" target="_blank" class="wa-btn-footer">💬 Chat on WhatsApp</a></div>
+    </div>
+    <div class="footer-bottom"><span class="footer-copy">© 2025 LocalRise Digital. All rights reserved.</span><span class="footer-copy">Made with ❤️ for local businesses across India</span></div>
+  </div>
+</footer>
+<a href="https://wa.me/918094285616" target="_blank" class="wa-float">💬</a>
+<script src="../js/main.js"></script>
+</body>
+</html>
